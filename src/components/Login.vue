@@ -1,3 +1,4 @@
+<script src="../../build/webpack.dev.conf.js"></script>
 <template>
   <div class="app01">
     <h4>密码修改认证</h4>
