@@ -4,11 +4,17 @@ import Router from 'vue-router'
 import login from '@/components/Login'
 import exam from '@/components/exam'
 import question_bank from '@/components/question_bank'
+import index from '@/components/index'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'index',
+      component: index
+    },
     {
       path: '/login',
       name: 'login',

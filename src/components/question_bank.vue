@@ -1,17 +1,12 @@
 <template>
   <div id="app">
 
-    <el-container>
+        <div  class="box">
+          <p>({{questionList[count].type}}){{count}}.{{questionList[count].topic}}</p>
+        </div>
 
-      <el-header>
-
-        <p>({{questionList[count].type}}){{count}}.{{questionList[count].topic}}</p>
-
-      </el-header>
-
-      <el-main>
         <div class="box1">
-
+        <div>
           <div v-show="questionList[count].type==='单选题'" style="margin-top: 20px">
             <el-radio border v-model="radio" label="A">A.{{questionList[count].optionA}}</el-radio></br>
             <el-radio border v-model="radio" label="B">B.{{questionList[count].optionB}}</el-radio></br>
@@ -28,17 +23,16 @@
               <el-radio border v-model="radio" label="A">对</el-radio>
               <el-radio border v-model="radio" label="B">错</el-radio>
           </div>
+          </div>
         </div>
 
         <div>
           <p>正确答案  ：  {{questionList[count].answer}}</p>
         </div>
-      </el-main>
       <el-footer class="footer">
         <el-button @click="decrease" type="info" round>上一题</el-button>
         <el-button @click="increase" type="info" round>下一题</el-button>
       </el-footer>
-    </el-container>
   </div>
 </template>
 
@@ -89,8 +83,13 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .box{
+    width: 95%;
+    height: 220px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+  }
   .box1{
+    margin-top: 10px;
     height: 200px;
   }
   .footer{position: absolute;bottom: 0;left: 0;height: 20px;width: 100%;}
